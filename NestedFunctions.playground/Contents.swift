@@ -69,8 +69,6 @@ func curry<A, B, C, D, E>(f: (A, B, C, D) -> E) -> A -> B -> C -> D -> E {
     return { a -> B -> C -> D -> E in { b -> C -> D -> E in { c -> D -> E in { d -> E in f(a, b, c, d) } } } }
 }
 
-let r = 8 + 9
-
 infix operator >>> { associativity left precedence 150 }
 infix operator <^> { associativity left }
 infix operator <*> { associativity left }
@@ -140,8 +138,6 @@ func flatten<A>(array: [A?]) -> [A] {
     return list
 }
 
-let e = 5 + 5
-
 extension NSError: Dumpable{}
 
 extension String: FBDecodable {
@@ -149,10 +145,6 @@ extension String: FBDecodable {
         return object as? String
     }
 }
-
-
-
-
 
 extension Int: FBDecodable {
     static func Decode(object: FBOject?) -> Int? {
@@ -165,9 +157,6 @@ extension Double: FBDecodable {
         return object as? Double
     }
 }
-
-
-
 
 
 func extract<A>(dict: FBDictionary, _ key: String) -> A? {
